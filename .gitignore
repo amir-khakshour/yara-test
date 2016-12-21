@@ -1,0 +1,6 @@
+# Python compiled byte code
+*.py[co]
+__pycache__
+.idea/
+
+

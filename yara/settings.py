@@ -12,15 +12,18 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import sys
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(os.path.join(BASE_DIR, 'apps'))  # adding apps dir to root
+BSAE_FILES_PATH = os.path.join(BASE_DIR, 'files')
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '4ez5zt6%n@h@ffge878c-kpa)*&xv_-czcom-vpw0k#j635+ye'
+SECRET_KEY = 'o57!175a4_4g55w2=#%mi(dsh)2tkz%y^hg!qlf*b&inj!iw$8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -100,3 +103,29 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BSAE_FILES_PATH, 'static')
+
+
+# -------------------------------------------#
+# Django Rest Framework Settings
+# -------------------------------------------#
+INSTALLED_APPS += (
+    'rest_framework',
+)
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.DjangoModelPermissions',
+    ),
+
+}
+
+# -------------------------------------------#
+# Misc API
+# -------------------------------------------#
+API_VERSION = 1.0
+API_PATH = 'api/%.1f/' % API_VERSION
+
+INSTALLED_APPS += (
+    'misc_api',
+)
