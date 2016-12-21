@@ -1,0 +1,17 @@
+yaraholding.com Interview - A programming interview Task
+
+here is the description of the code:
+
+به یک REST API جهت انجام عملیات CRUD برای یک مدل که بتواند اطلاعات ذیل را ثبت و نمایش دهد نیاز داریم
+Date Time [datetime]
+Purchase [string 150]
+Purchase ID [integer]
+User ID [integer]
+Name [string 150]
+Phone Number [string 20]
+Email [string 150]
+Address [logtext]
+لطفا برای انجام پروژه از Python 3.4 و Django 1.8 و 3 Django Rest Framework استفاده شود.
+
+فیلدهایی مانند شماره تلفن و ایمیل باید اعتبارسنجی شوند تا اطلاعات نادرست وارد سیستم نشوند.
+در صورتی که تونستید Authentication و Throttling برای امنیت API اضافه کنید.
